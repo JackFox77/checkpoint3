@@ -33,6 +33,7 @@
           /> -->
           <span class="ms-2">WayFinder</span>
         </a>
+        
       </nav>
     </header>
     <main>
@@ -56,6 +57,39 @@
           </select>
         </div> -->
       </form>
+
+      <div class="container-fluid">
+<section class="row">
+  <div><button onclick="app.TripsController.createtrip()" class="btn btn-secondary">Add List</button></div>
+  <div><form onsubmit="app.reservationController.createReservation()">
+                <section>
+              <form
+        class="row"
+        onsubmit=""
+      >
+        <div class="col-3">
+          <select class="form-control" name="type" id="type" required>
+            <option value="hotel">🏨 Hotel</option>
+            <option value="cabin">🌳Cabin</option>
+            <option value="misc">🏡Misc</option>
+          </select>
+        </div>
+        <div class="col-5 p-1">
+          <input class="form-control" type="text" name="name" id="name">
+          </div>
+          <div class="col-3 p-1">
+          <input class="form-control" type="number" name="price" , id="price">
+          </div>
+          <button  class="col-1 btn-rounded  btn btn-info">+</button>
+          
+           </form>
+        </section>
+  </form>
+    </div>
+</section>
+</div>
+
+
     </main>
     <footer class="bg-dark text-light">
       <div class="text-center no-select">

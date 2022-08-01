@@ -16,12 +16,13 @@ export class Reservations{
 
     get Template() {
         return `
-        <div><p>${this.type}</p>
-        <p>${this.name}</p>
-        <p>${this.price}</p>
-        <p>${this.tripId}</p>
-        <p id=""></p>
-        <p id=""></p>
+        <div class="row pt-3 bg-warning"><p class="col-2 ">Lodgings | ${this.type}</p>
+        <p class="col-2 ">Name | ${this.name}</p>
+        <p class="col-2 ">Price | ${this.price}</p>
+        <p class="col-2 ">Trip Id | ${this.tripId}</p>
+        <p class="col-2 ">Date | ${this.date}</p>
+        <p class="col-2 ">Address | ${this.address}</p>
+        <p class="col-2 ">Confirmation | ${this.id}</p>
         </div>
         `
     }

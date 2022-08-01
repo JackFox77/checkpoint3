@@ -1,6 +1,8 @@
 import { ProxyState } from "../AppState.js";
 import { Reservations } from "../Models/Reservations.js";
 import {tripService} from "../Services/TripService.js"
+import { loadState, SaveState } from "../Utils/LocalStorage.js";
+import{Pop} from "../Utils/Pop.js"
 
 function _draw() {
     let template = ''
@@ -14,19 +16,43 @@ export class TripsController{
         console.log('controller connected')
     
         ProxyState.on('trips', _draw)
-        ProxyState.on('reservations',_draw)
+      ProxyState.on('reservations', _draw)
+      ProxyState.on('trips', SaveState)
+      loadState()
         _draw()
         
 
         
 
 
-    }
+  }
+  
 
-      deleteTrip(id){
+ createtrip(){
+    window.event.preventDefault()
+    console.log('creating trip');
+    let form = window.event.target
+    let newTrip = {
+      name: form.name.value,
+     
+      size: parseInt(form.size.value),
+    }
+    console.log(newParty);
+     
+     tripService.createTrip(newTrip)
+    Pop.toast('Trip Created', 'success')
+
+  }
+
+
+
+
+  async deleteTrip(id) {
+    if(await Pop.confirm()){
     console.log('deleteing', id);
-    tripService.deleteTrip()
+    tripService.deleteTrip(id)
     _draw()
+    }
   }
 }
 

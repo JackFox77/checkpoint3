@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { reservationService, ReservationService } from "../Services/ReservationsService.js"
+import { loadState, SaveState } from "../Utils/LocalStorage.js"
 
 
 function _draw() {
@@ -12,7 +13,9 @@ function _draw() {
 export class ReservationsController{
     constructor() {
         console.log('reservation control');
-        ProxyState.on('reservations',_draw)
+        ProxyState.on('reservations', _draw)
+        ProxyState.on('reservations', SaveState)
+        loadState()
     }
     
 

@@ -14,7 +14,8 @@ export class ReservationService{
         
         ProxyState.reservations = [...ProxyState.reservations, new Reservations(newReservation)]
         console.log(ProxyState.reservations)
-    }
+        
+    }x
  }
 
 

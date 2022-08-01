@@ -22,7 +22,9 @@ class AppState extends EventEmitter {
       type: 'hotel',
       name: 'Hamilton',
       price: '125',
-      tripId:'1234'
+      tripId: '1234',
+      address: '53 Bulberry lane',
+      date:  '05-12-2000'
     }),
     new Reservations({
       type: 'cabin',
