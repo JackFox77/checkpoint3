@@ -2,7 +2,7 @@ import { generateId } from "../Utils/generateId.js"
 
 
 
-
+// ITEM
 export class Reservations{
     constructor(data) {
         this.tripId=data.tripId
@@ -17,7 +17,7 @@ export class Reservations{
     get Template() {
         return `
         <div class="row pt-3 bg-warning"><p class="col-2 ">Lodgings | ${this.type}</p>
-        <p class="col-2 ">Name | ${this.name}</p>
+        <p class="col-2 " onclick="">Name | ${this.name}</p>
         <p class="col-2 ">Price | ${this.price}</p>
         <p class="col-2 ">Trip Id | ${this.tripId}</p>
         <p class="col-2 ">Date | ${this.date}</p>

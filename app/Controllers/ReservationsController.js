@@ -29,11 +29,13 @@ export class ReservationsController{
         let newReservation = {
             type: form.type.value,
             name: form.name.value,
-            price: parseInt(form.price.value),
-            reservationId:reservationId
+            price: parseFloat(form.price.value),
+            reservationId: reservationId,
+            tripId: this.tripId
         }
         console.log(newReservation);
         reservationService.createReservation(newReservation)
+        _draw()
     }
 }
 

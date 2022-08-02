@@ -33,7 +33,12 @@
           /> -->
           <span class="ms-2">WayFinder</span>
         </a>
-        
+        <form class=""  onsubmit="app.tripsController.createTrip()">
+  <div>
+    <input name="title" id="title" type="text" min="3" max="15">
+    <button onclick="" class="btn btn-secondary">Add List</button>
+  </div>
+  <div></form>
       </nav>
     </header>
     <main>
@@ -60,8 +65,11 @@
 
       <div class="container-fluid">
 <section class="row">
-  <div><button onclick="app.TripsController.createtrip()" class="btn btn-secondary">Add List</button></div>
-  <div><form onsubmit="app.reservationController.createReservation()">
+  <!-- FIXME this needs to be a form with input for trip name -->
+  
+    <!-- FIXME this should be injected into each trip template so you can pass tripId (see party) -->
+    <!-- FIXME needs all input values (type, name, cost are good NEEDS confirmation code, address, date) -->
+    <!-- <form onsubmit="app.reservationController.createReservation()">
                 <section>
               <form
         class="row"
@@ -75,14 +83,14 @@
           </select>
         </div>
         <div class="col-5 p-1">
-          <input class="form-control" type="text" name="name" id="name">
+          <input class="form-control" type="text" name="name" id="name" placeholder="name">
           </div>
           <div class="col-3 p-1">
-          <input class="form-control" type="number" name="price" , id="price">
+          <input class="form-control" type="number" name="price" , id="price" placeholder="price">
           </div>
           <button  class="col-1 btn-rounded  btn btn-info">+</button>
           
-           </form>
+           </form> -->
         </section>
   </form>
     </div>

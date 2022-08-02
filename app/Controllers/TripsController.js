@@ -19,7 +19,7 @@ export class TripsController{
       ProxyState.on('reservations', _draw)
       ProxyState.on('trips', SaveState)
       loadState()
-        _draw()
+        _draw() // not needed
         
 
         
@@ -28,23 +28,29 @@ export class TripsController{
   }
   
 
- createtrip(){
+  createTrip() {
+  //  debugger
     window.event.preventDefault()
     console.log('creating trip');
-    let form = window.event.target
+    let form = window.event.target 
     let newTrip = {
-      name: form.name.value,
-     
-      size: parseInt(form.size.value),
+      name: form.title.value,
+      // size: parseInt(form.size.value),
     }
-    console.log(newParty);
+    // console.log(newParty);
      
      tripService.createTrip(newTrip)
     Pop.toast('Trip Created', 'success')
 
   }
 
-
+async deleteReservation(id) {
+    if(await Pop.confirm()){
+    console.log('deleteing', id);
+    reservationService.deleteReservation(id)
+    _draw()
+    }
+  }
 
 
   async deleteTrip(id) {

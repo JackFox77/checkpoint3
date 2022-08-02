@@ -15,8 +15,15 @@ export class ReservationService{
         ProxyState.reservations = [...ProxyState.reservations, new Reservations(newReservation)]
         console.log(ProxyState.reservations)
         
-    }x
- }
+    }
+
+
+    deleteReservation(id) {
+    ProxyState.reservations = ProxyState.reservations.filter(r => r.id !== id)
+    
+    }
+}
+
 
 
 
